@@ -6,12 +6,12 @@ const iframe = document.querySelector('iframe');
 const iframePlayer = new Vimeo.Player(iframe);
 
 function dataEvent (data){
-   const currentTime = data.seconds;
-   localStorage.setItem("videoplayer-current-time", currentTime);
+   localStorage.setItem("videoplayer-current-time", JSON.stringify(data));
 };
 
 iframePlayer.on('timeupdate',throttle(dataEvent,1000)); 
 iframePlayer.setCurrentTime(currentTime());
 function currentTime() {
-   return JSON.parse(localStorage.getItem('videoplayer-current-time'))
+   return JSON.parse(localStorage.getItem('videoplayer-current-time')).seconds
 };
+

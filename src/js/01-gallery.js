@@ -15,8 +15,6 @@ const markup = galleryItems.map(({ description, original, preview }) =>
    .join('');
 gallery.insertAdjacentHTML("afterbegin", markup);
 
-gallery.addEventListener(`click`, event => event.preventDefault());
-
 const captionOptions = {
     captionSelector:'img',
     captionType:'attr',
