@@ -13,5 +13,5 @@ function dataEvent (data){
 iframePlayer.on('timeupdate',throttle(dataEvent,1000)); 
 iframePlayer.setCurrentTime(currentTime());
 function currentTime() {
-   return JSON.parse(localStorage.getItem('videoplayer-current-time'))
+   return JSON.parse(localStorage.getItem('videoplayer-current-time') || 0)
 };
